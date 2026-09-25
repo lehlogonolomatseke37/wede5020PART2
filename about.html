@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | NeighbourlySpace</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Inter typeface (Google Fonts). preconnect opens the connection
+         early so text renders in the brand font sooner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+
+    <!-- External stylesheet shared by all five pages -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Lets keyboard users jump straight past the navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Website Header: logo + primary navigation, identical on all 5 pages -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <!-- WebP for modern browsers, PNG fallback; 2x file for retina screens -->
+                <picture>
+                    <source type="image/webp" srcset="images/logo-mark-48.webp 1x, images/logo-mark-96.webp 2x">
+                    <img src="images/logo.png" alt="" width="24" height="34">
+                </picture>
+                NeighbourlySpace
+            </a>
+
+            <!-- CSS-only mobile menu: the hidden checkbox stores the open/closed
+                 state and the label is the visible hamburger button (<=768px) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the navigation menu">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                Request a Service
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main id="main">
+
+        <!-- Page hero: same blue gradient as the homepage so every page
+             carries the brand identity; breadcrumb shows where you are -->
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">About</li>
+                    </ol>
+                </nav>
+                <p class="tag">About Us</p>
+                <h1>Simpler, safer, more connected communities.</h1>
+                <p class="lead">NeighbourlySpace was built to make life inside gated communities simpler, safer and more connected — starting with the estates we call home in Alberton.</p>
+            </div>
+        </section>
+
+        <!-- Our Story: why the business exists, placed first because it's
+             what most "About" page readers are looking for -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Our Story</p>
+                        <h2>Built to bridge a gap <br>inside our own estates.</h2>
+                    </div>
+                    <p>We saw residents struggling to find reliable service providers, and no simple way to stay informed and connected within their own estate. NeighbourlySpace was built to bridge that gap.</p>
+                </div>
+
+                <div class="story-grid">
+                    <div class="card logo-card">
+                        <picture>
+                            <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="(max-width: 768px) 70vw, 20rem">
+                            <img src="images/logo-full.png" alt="NeighbourlySpace logo: an orange house above a green chat bubble" width="320" height="205" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="card-dark gap-card">
+                        <div class="icon-square"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
+                        <h3>The gap we saw</h3>
+                        <ol class="gap-list">
+                            <li><b>01</b>Residents struggling to find reliable, trustworthy service providers.</li>
+                            <li><b>02</b>No simple way to stay informed and connected within their own estate.</li>
+                            <li><b>03</b>A community-first platform that brings both together in one trusted space.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision (long-term aspiration) and Mission (what we do day to day)
+             side by side, contrasted as a light card and a dark card -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="eyebrow">Vision &amp; Mission</p>
+                    <h2>Trust, connection <br>and convenience.</h2>
+                </div>
+
+                <div class="vm-grid">
+                    <article class="card">
+                        <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg> Our Vision</p>
+                        <h3>The most trusted community platform in South Africa.</h3>
+                        <p>To become the most trusted community platform in South Africa, known for quality, reliability and a seamless experience — giving every community tools that strengthen communication and simplify daily living.</p>
+                    </article>
+                    <article class="card-dark">
+                        <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg> Our Mission</p>
+                        <h3>Everyday tasks made easier, safely.</h3>
+                        <p>We support communities with a platform that promotes trust, connection and convenience, making everyday tasks easier while giving residents a safe space to access essential services.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer: four benefit cards (icons colour-coded in CSS) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">What We Offer</p>
+                        <h2>Everything your community <br>needs, in one space.</h2>
+                    </div>
+                    <p>From finding a trusted plumber to planning an estate family day, NeighbourlySpace keeps residents connected to the people and services around them.</p>
+                </div>
+
+                <div class="offer-grid">
+                    <article class="card card-hover offer-card">
+                        <span class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/><circle cx="17.5" cy="9" r="2.3"/><path d="M16 15.3c2.3.4 4 2 4 4.7"/></svg></span>
+                        <h3>A secure space to connect</h3>
+                        <p>A safe, private place for residents to connect with the neighbours in their own estate.</p>
+                    </article>
+                    <article class="card card-hover offer-card">
+                        <span class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></span>
+                        <h3>Verified providers</h3>
+                        <p>Service providers you can trust, vetted before they join our local network.</p>
+                    </article>
+                    <article class="card card-hover offer-card">
+                        <span class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 001 1h12a1 1 0 001-1V9.5"/><path d="M10 21v-5h4v5"/></svg></span>
+                        <h3>Home &amp; garden services</h3>
+                        <p>Access to home, garden, cleaning and maintenance services from one place.</p>
+                    </article>
+                    <article class="card card-hover offer-card">
+                        <span class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4"/><path d="M12 17.5s-3-1.8-3-3.7a1.6 1.6 0 013-.8 1.6 1.6 0 013 .8c0 1.9-3 3.7-3 3.7z"/></svg></span>
+                        <h3>Community events</h3>
+                        <p>Support for family and community events that bring neighbours together.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage + closing call-to-action -->
+        <section class="section section-tight">
+            <div class="container">
+                <div class="cta-dark">
+                    <div class="cta-dark-left">
+                        <span class="icon-circle text-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span>
+                        <div>
+                            <h3>Starting in Alberton. Growing across Gauteng.</h3>
+                            <p>Alberton, Meyersdal, Brackenhurst, New Redruth, Randhart and Glenvista — with more communities to follow.</p>
+                        </div>
+                    </div>
+                    <div class="cta-dark-right">
+                        <a class="btn btn-white" href="services.html">Explore Our Services <span class="arrow" aria-hidden="true">→</span></a>
+                        <a class="link-arrow on-dark" href="contact-us.html">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Website Footer: full sitemap + contact details on every page -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <picture>
+                        <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="5.25rem">
+                        <img src="images/logo-full.png" alt="NeighbourlySpace logo" width="81" height="52" loading="lazy">
+                    </picture>
+                    <p class="footer-statement">Connecting neighbours, homes and trusted local professionals.</p>
+                    <p class="footer-tagline">Built in Alberton.<br>Growing across Gauteng.</p>
+                    <a class="btn btn-outline" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="footer-product">
+                    <p class="footer-head">Product</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <p class="footer-head">Services</p>
+                    <ul class="footer-links">
+                        <li><a href="services.html#plumbing">Plumbing</a></li>
+                        <li><a href="services.html#electrical">Electrical</a></li>
+                        <li><a href="services.html#garden">Garden Services</a></li>
+                        <li><a href="services.html#cleaning">Cleaning</a></li>
+                        <li><a href="services.html#handyman">Handyman</a></li>
+                        <li><a href="services.html#pool">Pool Services</a></li>
+                        <li><a href="services.html#painting">Painting</a></li>
+                        <li><a href="services.html#security">Security</a></li>
+                    </ul>
+                    <a class="footer-view-all" href="services.html">View all services <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="footer-company">
+                    <p class="footer-head">Company</p>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="enquiry.html">Become a Provider</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support">
+                    <p class="footer-head">Support</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enquiry.html">Request a Service</a></li>
+                        <li><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%20need%20some%20help" target="_blank" rel="noopener">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeighbourlySpace.<br>All rights reserved.</p>
+                <p class="footer-loc">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A7A7A" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                    Alberton, Gauteng<br>South Africa
+                </p>
+                <p>WhatsApp:<br><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">+27 68 457 0771</a></p>
+                <p>Built &amp; designed by<br>Missinghalostudios</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener" aria-label="Chat to NeighbourlySpace on WhatsApp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

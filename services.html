@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | NeighbourlySpace</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Inter typeface (Google Fonts). preconnect opens the connection
+         early so text renders in the brand font sooner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+
+    <!-- External stylesheet shared by all five pages -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Lets keyboard users jump straight past the navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Website Header: logo + primary navigation, identical on all 5 pages -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <!-- WebP for modern browsers, PNG fallback; 2x file for retina screens -->
+                <picture>
+                    <source type="image/webp" srcset="images/logo-mark-48.webp 1x, images/logo-mark-96.webp 2x">
+                    <img src="images/logo.png" alt="" width="24" height="34">
+                </picture>
+                NeighbourlySpace
+            </a>
+
+            <!-- CSS-only mobile menu: the hidden checkbox stores the open/closed
+                 state and the label is the visible hamburger button (<=768px) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the navigation menu">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" aria-current="page">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                Request a Service
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main id="main" class="services-page">
+
+        <!-- Page hero: same blue gradient as the homepage so every page
+             carries the brand identity; breadcrumb shows where you are -->
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">Services</li>
+                    </ol>
+                </nav>
+                <p class="tag">Our Services</p>
+                <h1>Trusted help for every job around the home.</h1>
+                <p class="lead">Browse the categories our vetted local professionals cover across Alberton and Gauteng. Don't see what you need? Message us and we'll find someone who can help.</p>
+            </div>
+        </section>
+
+        <!-- 8 service cards in a CSS Grid (4 columns desktop, 2 tablet, 1
+             mobile). Each card has an id so links like services.html#pool
+             jump straight to it and :target highlights it -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">8 Categories</p>
+                        <h2>Choose the help <br>you need.</h2>
+                    </div>
+                    <p>Tap a category to request it on WhatsApp with a pre-filled message. Every request is handled personally while our app is being built.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="card card-hover service-card" id="plumbing">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 002.5 2.5"/></svg></span>
+                        <h3>Plumbing</h3>
+                        <p>Leaking taps, blocked drains and general plumbing repairs from vetted local plumbers.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20plumbing%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Plumbing </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="electrical">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z"/></svg></span>
+                        <h3>Electrical</h3>
+                        <p>Certified electricians for repairs, installations and load-shedding-related work.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20electrical%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Electrical </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="garden">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg></span>
+                        <h3>Garden Services</h3>
+                        <p>Lawn mowing, hedge trimming and general garden maintenance.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20garden%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Garden Services </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="cleaning">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></svg></span>
+                        <h3>Cleaning</h3>
+                        <p>Trusted home cleaning services for a spotless, well-kept household.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20cleaning%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Cleaning </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="handyman">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.3 5.3L3.5 17.5a1.5 1.5 0 002.1 2.1l5.9-5.9a4 4 0 005.3-5.3l-2.5 2.5-2.1-.6-.6-2.1 2.5-2.5z"/></svg></span>
+                        <h3>Handyman</h3>
+                        <p>General repairs and odd jobs around the home, big or small.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20handyman%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Handyman </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="pool">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 16c1.6 0 1.6 1.5 3.2 1.5S7.3 16 8.9 16s1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3-1.5"/><path d="M8 13V5.5a2 2 0 014 0M16 13V5.5a2 2 0 00-4 0"/><path d="M8 9h8"/></svg></span>
+                        <h3>Pool Services</h3>
+                        <p>Regular pool cleaning and maintenance to keep it swim-ready.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20pool%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Pool Services </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="painting">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3.5" width="14" height="6" rx="1.5"/><path d="M17 6.5h2.5V12H11v3"/><rect x="9.5" y="15" width="3" height="6" rx="1"/></svg></span>
+                        <h3>Painting</h3>
+                        <p>Interior and exterior painting from experienced local painters.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20painting%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Painting </span>on WhatsApp</a>
+                    </article>
+                    <article class="card card-hover service-card" id="security">
+                        <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        <h3>Security</h3>
+                        <p>Installation and maintenance of estate and home security equipment.</p>
+                        <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20security%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Security </span>on WhatsApp</a>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Recent work: real jobs completed through NeighbourlySpace. Each
+             photo is a responsive image set (WebP at 3 widths + JPEG
+             fallback) so phones download a smaller file than desktops -->
+        <section class="section section-light" id="recent-work">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Recent Work</p>
+                        <h2>Jobs completed <br>in our community.</h2>
+                    </div>
+                    <p>A few of the security and handyman jobs our vetted professionals have finished for residents across Alberton.</p>
+                </div>
+
+                <div class="work-grid">
+                    <figure class="work-card">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="images/work-motion-sensor-480.webp 480w, images/work-motion-sensor-800.webp 800w, images/work-motion-sensor-1200.webp 1200w"
+                                sizes="(max-width: 480px) 92vw, (max-width: 1024px) 44vw, 22vw">
+                            <img src="images/work-motion-sensor.jpg" alt="Outdoor motion sensor mounted beside a patio door on an estate wall" width="800" height="600" loading="lazy">
+                        </picture>
+                        <figcaption>
+                            <span class="work-cat">Security</span>
+                            Outdoor beam sensor fitted at a Meyersdal home
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="images/work-cctv-electric-fence-480.webp 480w, images/work-cctv-electric-fence-800.webp 800w, images/work-cctv-electric-fence-1200.webp 1200w"
+                                sizes="(max-width: 480px) 92vw, (max-width: 1024px) 44vw, 22vw">
+                            <img src="images/work-cctv-electric-fence.jpg" alt="CCTV camera and electric fence installed along a boundary wall" width="800" height="600" loading="lazy">
+                        </picture>
+                        <figcaption>
+                            <span class="work-cat">Security</span>
+                            CCTV and electric fence check on a boundary wall
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="images/work-gate-motor-service-480.webp 480w, images/work-gate-motor-service-800.webp 800w, images/work-gate-motor-service-1200.webp 1200w"
+                                sizes="(max-width: 480px) 92vw, (max-width: 1024px) 44vw, 22vw">
+                            <img src="images/work-gate-motor-service.jpg" alt="Gate motor stripped for service with tools and a replacement unit on the driveway" width="800" height="600" loading="lazy">
+                        </picture>
+                        <figcaption>
+                            <span class="work-cat">Handyman</span>
+                            Gate motor replacement in Alberton
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="images/work-gate-motor-install-480.webp 480w, images/work-gate-motor-install-800.webp 800w, images/work-gate-motor-install-1200.webp 1200w"
+                                sizes="(max-width: 480px) 92vw, (max-width: 1024px) 44vw, 22vw">
+                            <img src="images/work-gate-motor-install.jpg" alt="Three technicians fitting a new sliding gate motor at a perimeter fence" width="800" height="600" loading="lazy">
+                        </picture>
+                        <figcaption>
+                            <span class="work-cat">Handyman</span>
+                            New sliding gate motor being installed
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="images/work-laser-cut-gate-480.webp 480w, images/work-laser-cut-gate-800.webp 800w, images/work-laser-cut-gate-1200.webp 1200w"
+                                sizes="(max-width: 480px) 92vw, (max-width: 1024px) 44vw, 22vw">
+                            <img src="images/work-laser-cut-gate.jpg" alt="Laser-cut steel sliding gate with a leaf pattern at an estate entrance" width="800" height="600" loading="lazy">
+                        </picture>
+                        <figcaption>
+                            <span class="work-cat">Security</span>
+                            Laser-cut sliding gate handed over to the resident
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="help-banner">
+                    <div>
+                        <h3>Don't see what you need?</h3>
+                        <p>Send us an enquiry with a few details and we'll find a trusted local professional who can help.</p>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn btn-dark" href="enquiry.html">Send an Enquiry <span class="arrow" aria-hidden="true">→</span></a>
+                        <a class="btn btn-whatsapp" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg> WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Website Footer: full sitemap + contact details on every page -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <picture>
+                        <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="5.25rem">
+                        <img src="images/logo-full.png" alt="NeighbourlySpace logo" width="81" height="52" loading="lazy">
+                    </picture>
+                    <p class="footer-statement">Connecting neighbours, homes and trusted local professionals.</p>
+                    <p class="footer-tagline">Built in Alberton.<br>Growing across Gauteng.</p>
+                    <a class="btn btn-outline" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="footer-product">
+                    <p class="footer-head">Product</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <p class="footer-head">Services</p>
+                    <ul class="footer-links">
+                        <li><a href="services.html#plumbing">Plumbing</a></li>
+                        <li><a href="services.html#electrical">Electrical</a></li>
+                        <li><a href="services.html#garden">Garden Services</a></li>
+                        <li><a href="services.html#cleaning">Cleaning</a></li>
+                        <li><a href="services.html#handyman">Handyman</a></li>
+                        <li><a href="services.html#pool">Pool Services</a></li>
+                        <li><a href="services.html#painting">Painting</a></li>
+                        <li><a href="services.html#security">Security</a></li>
+                    </ul>
+                    <a class="footer-view-all" href="services.html">View all services <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="footer-company">
+                    <p class="footer-head">Company</p>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="enquiry.html">Become a Provider</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support">
+                    <p class="footer-head">Support</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enquiry.html">Request a Service</a></li>
+                        <li><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%20need%20some%20help" target="_blank" rel="noopener">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeighbourlySpace.<br>All rights reserved.</p>
+                <p class="footer-loc">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A7A7A" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                    Alberton, Gauteng<br>South Africa
+                </p>
+                <p>WhatsApp:<br><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">+27 68 457 0771</a></p>
+                <p>Built &amp; designed by<br>Missinghalostudios</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener" aria-label="Chat to NeighbourlySpace on WhatsApp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

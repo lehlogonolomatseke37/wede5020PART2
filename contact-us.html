@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | NeighbourlySpace</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Inter typeface (Google Fonts). preconnect opens the connection
+         early so text renders in the brand font sooner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+
+    <!-- External stylesheet shared by all five pages -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Lets keyboard users jump straight past the navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Website Header: logo + primary navigation, identical on all 5 pages -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <!-- WebP for modern browsers, PNG fallback; 2x file for retina screens -->
+                <picture>
+                    <source type="image/webp" srcset="images/logo-mark-48.webp 1x, images/logo-mark-96.webp 2x">
+                    <img src="images/logo.png" alt="" width="24" height="34">
+                </picture>
+                NeighbourlySpace
+            </a>
+
+            <!-- CSS-only mobile menu: the hidden checkbox stores the open/closed
+                 state and the label is the visible hamburger button (<=768px) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the navigation menu">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact-us.html" aria-current="page">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                Request a Service
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main id="main" class="contact-page">
+
+        <!-- Page hero: same blue gradient as the homepage so every page
+             carries the brand identity; breadcrumb shows where you are -->
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">Contact Us</li>
+                    </ol>
+                </nav>
+                <p class="tag">Contact Us</p>
+                <h1>Get In Touch</h1>
+                <p class="lead">Whether you're a resident, a business, or a service provider, we're here to help you connect, share updates and access trusted services.</p>
+            </div>
+        </section>
+
+        <!-- Quick-reference contact cards: WhatsApp, coverage and location -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Contact Details</p>
+                        <h2>Three ways to reach <br>NeighbourlySpace.</h2>
+                    </div>
+                    <p>Message us on WhatsApp for the fastest reply, check whether we cover your suburb, or send a full enquiry with the details of the job.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <article class="card contact-card">
+                        <span class="icon-circle text-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg></span>
+                        <h3>WhatsApp</h3>
+                        <p class="big">+27 68 457 0771</p>
+                        <p>The fastest way to reach us. Every message is answered personally during business hours.</p>
+                        <a class="btn btn-whatsapp" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20get%20in%20touch" target="_blank" rel="noopener">Message Us on WhatsApp</a>
+                    </article>
+
+                    <article class="card contact-card">
+                        <span class="icon-circle text-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span>
+                        <h3>Areas We Serve</h3>
+                        <p class="big">Alberton &amp; surrounds</p>
+                        <ul class="location-tags">
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Alberton</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Meyersdal</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Brackenhurst</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>New Redruth</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Randhart</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Glenvista</li>
+                        </ul>
+                        <p>— and growing across Gauteng.</p>
+                    </article>
+
+                    <article class="card-dark contact-card">
+                        <span class="icon-circle text-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 001 1h12a1 1 0 001-1V9.5"/><path d="M10 21v-5h4v5"/></svg></span>
+                        <h3>Based In</h3>
+                        <p class="big">Alberton, Gauteng, South Africa</p>
+                        <p>Built in Alberton. Growing across Gauteng.</p>
+                        <a class="btn btn-white" href="enquiry.html">Send an Enquiry <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Maps: the two areas we work in most, embedded with <iframe> so the
+             page still needs no JavaScript of its own -->
+        <section class="section section-light" id="find-us">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Find Us</p>
+                        <h2>Two areas we work in <br>every week.</h2>
+                    </div>
+                    <p>NeighbourlySpace is based in Alberton and our professionals travel across the surrounding estates. Check the maps below to see whether you are inside our service area.</p>
+                </div>
+
+                <div class="map-grid">
+                    <article class="card map-card">
+                        <h3>Alberton (base)</h3>
+                        <p>Our home suburb, where most requests come from.</p>
+                        <iframe title="Map of Alberton, Gauteng, where NeighbourlySpace is based" src="https://www.google.com/maps?q=Alberton%2C%20Gauteng%2C%20South%20Africa&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Alberton%2C%20Gauteng%2C%20South%20Africa" target="_blank" rel="noopener">Open Alberton in Google Maps</a>
+                    </article>
+                    <article class="card map-card">
+                        <h3>Meyersdal and surrounds</h3>
+                        <p>Estates we serve daily, including Brackenhurst, New Redruth, Randhart and Glenvista.</p>
+                        <iframe title="Map of Meyersdal, Alberton, one of the areas NeighbourlySpace serves" src="https://www.google.com/maps?q=Meyersdal%2C%20Alberton%2C%20South%20Africa&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Meyersdal%2C%20Alberton%2C%20South%20Africa" target="_blank" rel="noopener">Open Meyersdal in Google Maps</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Short contact form: for visitors who would rather write to us than
+             open WhatsApp. The full service request form lives on enquiry.html -->
+        <section class="section">
+            <div class="container contact-form-grid">
+                <div class="card form-card">
+                    <h2>Send us a message</h2>
+                    <p>Fill in your details and we will reply within 24 hours via WhatsApp, phone call or email.</p>
+
+                    <form action="#" method="post">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" name="contact-name" autocomplete="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="field">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="contact-email" autocomplete="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="field full">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="contact-message" placeholder="Tell us how we can help" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <small>Fields marked <span aria-hidden="true">*</span> are required.</small>
+                            <button type="submit" class="btn btn-primary">Send Message <span class="arrow" aria-hidden="true">&rarr;</span></button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="card-dark next-steps" aria-label="Other ways to reach us">
+                    <h3>Prefer to talk?</h3>
+                    <ol>
+                        <li><strong>WhatsApp us</strong>+27 68 457 0771, the fastest way to reach the team.</li>
+                        <li><strong>Request a service</strong>Use the enquiry form for a specific job, with the service type and your suburb.</li>
+                        <li><strong>Business hours</strong>Messages are answered during business hours, usually the same day.</li>
+                    </ol>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-tight">
+            <div class="container">
+                <!-- Provider recruitment call-to-action -->
+                <div class="cta-dark">
+                    <div class="cta-dark-left">
+                        <span class="icon-circle text-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/><circle cx="17.5" cy="9" r="2.3"/><path d="M16 15.3c2.3.4 4 2 4 4.7"/></svg></span>
+                        <div>
+                            <h3>Are you a local service provider?</h3>
+                            <p>Join our network of trusted professionals and get connected with residents in your area.</p>
+                        </div>
+                    </div>
+                    <div class="cta-dark-right">
+                        <a class="btn btn-white" href="enquiry.html">Become a Provider <span class="arrow" aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Website Footer: full sitemap + contact details on every page -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <picture>
+                        <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="5.25rem">
+                        <img src="images/logo-full.png" alt="NeighbourlySpace logo" width="81" height="52" loading="lazy">
+                    </picture>
+                    <p class="footer-statement">Connecting neighbours, homes and trusted local professionals.</p>
+                    <p class="footer-tagline">Built in Alberton.<br>Growing across Gauteng.</p>
+                    <a class="btn btn-outline" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="footer-product">
+                    <p class="footer-head">Product</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <p class="footer-head">Services</p>
+                    <ul class="footer-links">
+                        <li><a href="services.html#plumbing">Plumbing</a></li>
+                        <li><a href="services.html#electrical">Electrical</a></li>
+                        <li><a href="services.html#garden">Garden Services</a></li>
+                        <li><a href="services.html#cleaning">Cleaning</a></li>
+                        <li><a href="services.html#handyman">Handyman</a></li>
+                        <li><a href="services.html#pool">Pool Services</a></li>
+                        <li><a href="services.html#painting">Painting</a></li>
+                        <li><a href="services.html#security">Security</a></li>
+                    </ul>
+                    <a class="footer-view-all" href="services.html">View all services <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="footer-company">
+                    <p class="footer-head">Company</p>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="enquiry.html">Become a Provider</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support">
+                    <p class="footer-head">Support</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enquiry.html">Request a Service</a></li>
+                        <li><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%20need%20some%20help" target="_blank" rel="noopener">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeighbourlySpace.<br>All rights reserved.</p>
+                <p class="footer-loc">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A7A7A" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                    Alberton, Gauteng<br>South Africa
+                </p>
+                <p>WhatsApp:<br><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">+27 68 457 0771</a></p>
+                <p>Built &amp; designed by<br>Missinghalostudios</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener" aria-label="Chat to NeighbourlySpace on WhatsApp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

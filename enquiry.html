@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request a Service | NeighbourlySpace</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Inter typeface (Google Fonts). preconnect opens the connection
+         early so text renders in the brand font sooner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+
+    <!-- External stylesheet shared by all five pages -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Lets keyboard users jump straight past the navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Website Header: logo + primary navigation, identical on all 5 pages -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <!-- WebP for modern browsers, PNG fallback; 2x file for retina screens -->
+                <picture>
+                    <source type="image/webp" srcset="images/logo-mark-48.webp 1x, images/logo-mark-96.webp 2x">
+                    <img src="images/logo.png" alt="" width="24" height="34">
+                </picture>
+                NeighbourlySpace
+            </a>
+
+            <!-- CSS-only mobile menu: the hidden checkbox stores the open/closed
+                 state and the label is the visible hamburger button (<=768px) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the navigation menu">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                Request a Service
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main id="main">
+
+        <!-- Page hero: same blue gradient as the homepage so every page
+             carries the brand identity; breadcrumb shows where you are -->
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">Enquiry</li>
+                    </ol>
+                </nav>
+                <p class="tag">Enquiry</p>
+                <h1>Request a Service</h1>
+                <p class="lead">Fill in the form below and we'll get back to you within 24 hours via WhatsApp, phone call or email.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container enquiry-grid">
+
+                <!-- action="#" because there is no live backend yet; every field
+                     keeps its <label for> + id pair, and required/type attributes
+                     give built-in validation. Styling for :focus, :user-invalid
+                     and :user-valid lives in css/style.css -->
+                <div class="card form-card">
+                    <h2>Tell us what you need</h2>
+                    <p>The more detail you share, the faster we can match you with the right professional.</p>
+
+                    <form action="#" method="post">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="field">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 082 123 4567" required>
+                            </div>
+                            <div class="field">
+                                <!-- Options mirror the 8 services on services.html, plus
+                                     business / general / support enquiries -->
+                                <label for="service">How can we help you?</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select one option</option>
+                                    <option value="plumbing">Plumbing Services</option>
+                                    <option value="electrical">Electrical Services</option>
+                                    <option value="garden">Garden Services</option>
+                                    <option value="cleaning">Cleaning Services</option>
+                                    <option value="handyman">Handyman Services</option>
+                                    <option value="pool">Pool Services</option>
+                                    <option value="painting">Painting Services</option>
+                                    <option value="security">Security Services</option>
+                                    <option value="business">I am a business looking to join NeighbourlySpace</option>
+                                    <option value="general">General Enquiry</option>
+                                    <option value="support">Technical Support</option>
+                                </select>
+                            </div>
+                            <div class="field full">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us about the job, your suburb or estate, and when you need help"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <small>Fields marked <span aria-hidden="true">*</span> are required.</small>
+                            <button type="submit" class="btn btn-primary">Send Enquiry <span class="arrow" aria-hidden="true">→</span></button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sidebar: sets expectations and offers WhatsApp as a faster option -->
+                <aside class="enquiry-aside" aria-label="What happens after you enquire">
+                    <div class="card-dark next-steps">
+                        <h3>What happens next</h3>
+                        <ol>
+                            <li><strong>We review your request</strong>Our team reads every enquiry personally.</li>
+                            <li><strong>We connect you</strong>We recommend a trusted professional who serves your area.</li>
+                            <li><strong>You book directly</strong>Agree on a time and get the job done with peace of mind.</li>
+                        </ol>
+                    </div>
+                    <a class="wa-banner" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <span class="wa-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg></span>
+                        <span>
+                            <strong>Prefer WhatsApp?</strong>
+                            <span>Chat to us on +27 68 457 0771</span>
+                        </span>
+                    </a>
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Website Footer: full sitemap + contact details on every page -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <picture>
+                        <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="5.25rem">
+                        <img src="images/logo-full.png" alt="NeighbourlySpace logo" width="81" height="52" loading="lazy">
+                    </picture>
+                    <p class="footer-statement">Connecting neighbours, homes and trusted local professionals.</p>
+                    <p class="footer-tagline">Built in Alberton.<br>Growing across Gauteng.</p>
+                    <a class="btn btn-outline" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="footer-product">
+                    <p class="footer-head">Product</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <p class="footer-head">Services</p>
+                    <ul class="footer-links">
+                        <li><a href="services.html#plumbing">Plumbing</a></li>
+                        <li><a href="services.html#electrical">Electrical</a></li>
+                        <li><a href="services.html#garden">Garden Services</a></li>
+                        <li><a href="services.html#cleaning">Cleaning</a></li>
+                        <li><a href="services.html#handyman">Handyman</a></li>
+                        <li><a href="services.html#pool">Pool Services</a></li>
+                        <li><a href="services.html#painting">Painting</a></li>
+                        <li><a href="services.html#security">Security</a></li>
+                    </ul>
+                    <a class="footer-view-all" href="services.html">View all services <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="footer-company">
+                    <p class="footer-head">Company</p>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="enquiry.html">Become a Provider</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support">
+                    <p class="footer-head">Support</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enquiry.html">Request a Service</a></li>
+                        <li><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%20need%20some%20help" target="_blank" rel="noopener">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeighbourlySpace.<br>All rights reserved.</p>
+                <p class="footer-loc">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A7A7A" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                    Alberton, Gauteng<br>South Africa
+                </p>
+                <p>WhatsApp:<br><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">+27 68 457 0771</a></p>
+                <p>Built &amp; designed by<br>Missinghalostudios</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener" aria-label="Chat to NeighbourlySpace on WhatsApp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

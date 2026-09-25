@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeighbourlySpace | Trusted Services for Your Community</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Inter typeface (Google Fonts). preconnect opens the connection
+         early so text renders in the brand font sooner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+
+    <!-- External stylesheet shared by all five pages -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Lets keyboard users jump straight past the navigation -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Website Header: logo + primary navigation, identical on all 5 pages -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <!-- WebP for modern browsers, PNG fallback; 2x file for retina screens -->
+                <picture>
+                    <source type="image/webp" srcset="images/logo-mark-48.webp 1x, images/logo-mark-96.webp 2x">
+                    <img src="images/logo.png" alt="" width="24" height="34">
+                </picture>
+                NeighbourlySpace
+            </a>
+
+            <!-- CSS-only mobile menu: the hidden checkbox stores the open/closed
+                 state and the label is the visible hamburger button (<=768px) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show or hide the navigation menu">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="menu">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                Request a Service
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main id="main">
+
+        <!-- Hero: value proposition + primary WhatsApp call-to-action on the
+             left, app mockup with floating feature cards on the right -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <p class="tag">Coming Soon</p>
+                    <h1>Every Service You Need. Right From Your Phone.</h1>
+                    <p>NeighbourlySpace connects residents with verified local professionals inside estates and neighbourhoods across South Africa. Book trusted services, discover businesses nearby, and strengthen your community — all from one simple app.</p>
+
+                    <div class="buttons">
+                        <a class="btn btn-white" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+                        <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+                    </div>
+
+                    <p class="cta-note">The NeighbourlySpace app is launching soon. Until then, we'll connect you with trusted local professionals through WhatsApp.</p>
+
+                    <div class="rating">
+                        <span class="stars" aria-hidden="true">★★★★★</span>
+                        <span>4.9/5 average rating*<small>*Placeholder — will reflect real reviews once we launch</small></span>
+                    </div>
+                </div>
+
+                <div class="phone-wrap">
+                    <!-- Responsive image: the browser picks the smallest WebP that
+                         is sharp enough for the slot size given in "sizes" -->
+                    <picture>
+                        <source type="image/webp"
+                            srcset="images/hero-phone-mockup-320.webp 320w, images/hero-phone-mockup-480.webp 480w, images/hero-phone-mockup-640.webp 640w"
+                            sizes="(max-width: 480px) 13rem, (max-width: 768px) 15rem, 18.75rem">
+                        <img class="hero-mockup-img" src="images/hero-phone-mockup.png" alt="NeighbourlySpace app showing a lawn mowing service booking" width="300" height="450" fetchpriority="high">
+                    </picture>
+
+                    <!-- Decorative feature cards, hidden below 1024px -->
+                    <div class="pop-card pop-tools">
+                        <div class="pop-icon bg-orange">
+                            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M12.5 3.5L14.5 5.5L10 10L8 8L12.5 3.5Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 8L3.5 12.5C2.9 13.1 2.9 14 3.5 14.5C4.1 15.1 5 15.1 5.5 14.5L10 10" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <p class="pop-title">Tools</p>
+                        <ul class="tool-list">
+                            <li><span class="dot bg-green"></span>Garden &amp; Lawn</li>
+                            <li><span class="dot bg-blue"></span>Electrical</li>
+                            <li><span class="dot bg-orange"></span>Cleaning</li>
+                            <li><span class="dot bg-green"></span>Plumbing</li>
+                        </ul>
+                    </div>
+
+                    <div class="pop-card pop-chats">
+                        <div class="pop-icon bg-blue">
+                            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 5C3 3.9 3.9 3 5 3H13C14.1 3 15 3.9 15 5V11C15 12.1 14.1 13 13 13H7L4 16V13H5C3.9 13 3 12.1 3 11V5Z" stroke="white" stroke-width="1.4"/></svg>
+                        </div>
+                        <p class="pop-title">Community Chat</p>
+                        <p class="chat-msg"><b>Naledi K.</b>Need an electrician nearby?</p>
+                        <p class="chat-msg"><b>Thabo M.</b>Try Sipho's, he's great!</p>
+                    </div>
+
+                    <div class="pop-card pop-calendar">
+                        <div class="pop-icon bg-green">
+                            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="2" stroke="white" stroke-width="1.4"/><path d="M3 7.5H15" stroke="white" stroke-width="1.4"/><path d="M6 2.5V5M12 2.5V5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+                        </div>
+                        <p class="pop-title">Calendar</p>
+                        <div class="cal-row"><span>Thu</span><strong>Garden Service · 9:00</strong></div>
+                        <div class="cal-row"><span>Sat</span><strong>Pool Cleaning · 11:00</strong></div>
+                    </div>
+
+                    <div class="pop-card pop-loadshedding">
+                        <div class="pop-icon bg-red">
+                            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M10 2L4 10.5H8.5L7.5 16L14 7H9.5L10 2Z" fill="white"/></svg>
+                        </div>
+                        <p class="load-msg">Load Shedding<b>Stage 2 · 18:00–20:30</b></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Community: why NeighbourlySpace, the areas we serve and a short
+             about summary linking through to about.html -->
+        <section class="section" id="impacts">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Our Community</p>
+                        <h2>Trusted Local Services. <br>Built Around Neighbours.</h2>
+                    </div>
+                    <p>Residents across Alberton and Gauteng deserve a better way to find reliable home services. NeighbourlySpace connects homeowners, estate residents and community managers with trusted local professionals — today via WhatsApp, with our app launching soon.</p>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-col">
+                        <div class="card">
+                            <div class="community-card-head">
+                                <div class="avatar-stack" aria-hidden="true">
+                                    <span class="bg-orange"></span>
+                                    <span class="bg-green"></span>
+                                    <span class="bg-blue"></span>
+                                </div>
+                                <p>Serving communities<br>across Gauteng</p>
+                            </div>
+                            <ul class="check-list">
+                                <li><span class="check-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12.5l4 4 8-9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Verified local professionals</li>
+                                <li><span class="check-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12.5l4 4 8-9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Estate &amp; neighbourhood focused</li>
+                                <li><span class="check-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12.5l4 4 8-9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fast WhatsApp requests</li>
+                                <li><span class="check-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12.5l4 4 8-9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Reliable, community-driven</li>
+                            </ul>
+                        </div>
+                        <a class="wa-banner" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                            <span class="wa-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg></span>
+                            <span>
+                                <strong>Available now via WhatsApp</strong>
+                                <span>App coming soon</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-dark community-dark">
+                        <div class="icon-square">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 001 1h12a1 1 0 001-1V9.5"/><path d="M9.4 13.4c0-1 .8-1.7 1.7-1.7.6 0 1.1.3 1.4.7.3-.4.8-.7 1.4-.7 1 0 1.7.8 1.7 1.7 0 1.5-1.7 2.8-3.1 3.7-1.4-.9-3.1-2.2-3.1-3.7z" fill="#fff" stroke="none"/></svg>
+                        </div>
+                        <h3>Finding someone trustworthy shouldn't depend on luck.</h3>
+                        <p>NeighbourlySpace is creating a safer, simpler way for neighbours to connect with reliable local professionals they can feel confident inviting into their homes.</p>
+                        <a class="link-arrow on-dark" href="about.html">Read our story</a>
+                        <p class="pill-tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" aria-hidden="true"><path d="M12 20s-7-4.35-9.5-8.5C.7 8.3 2 4.5 5.8 4.5c2 0 3.4 1.1 4.2 2.4.8-1.3 2.2-2.4 4.2-2.4 3.8 0 5.1 3.8 3.3 7-2.5 4.15-9.5 8.5-9.5 8.5z"/></svg>
+                            Community First
+                        </p>
+                    </div>
+
+                    <div class="card community-support">
+                        <div class="card-title-row">
+                            <span class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg></span>
+                            <h3>Local Support</h3>
+                        </div>
+                        <p>We're starting close to home, building our network across Alberton and Gauteng before expanding to more communities across South Africa.</p>
+                        <p class="serving-label">Serving:</p>
+                        <ul class="location-tags">
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Alberton</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Meyersdal</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Brackenhurst</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>New Redruth</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Randhart</li>
+                            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3" fill="var(--orange)" stroke="none"/></svg>Glenvista</li>
+                        </ul>
+                        <div class="growing-banner">
+                            <span class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/><circle cx="17.5" cy="9" r="2.3"/><path d="M16 15.3c2.3.4 4 2 4 4.7"/></svg></span>
+                            <span>
+                                <strong>Growing Community</strong>
+                                <span>Growing across Gauteng.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-banner">
+                    <div>
+                        <h3>Need Help Around the House?</h3>
+                        <p>Whether it's plumbing, electrical work, gardening, cleaning or general maintenance, we're ready to connect you with trusted professionals near you.</p>
+                    </div>
+                    <a class="btn btn-whatsapp" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works: 3 numbered steps, each with a phone-style preview.
+             Desktop = 3 columns, tablet = rows, mobile = stacked -->
+        <section class="section hiw-section" id="how-it-works">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">How It Works</p>
+                        <h2>From request to reliable service <br>in minutes.</h2>
+                    </div>
+                    <p>Whether it's plumbing, electrical work or garden maintenance, getting help starts with one message. All requests are handled personally through WhatsApp while our app is being built.</p>
+                </div>
+
+                <ol class="hiw-steps">
+                    <li class="hiw-step">
+                        <p class="step-num">01</p>
+                        <div class="step-top">
+                            <span class="icon-circle text-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 001 1h12a1 1 0 001-1V9.5"/><path d="M10 21v-5h4v5"/></svg></span>
+                            <h3>Send us a message.</h3>
+                        </div>
+                        <p class="desc">Tell us what service you need, your suburb or estate, and when you need it.</p>
+                        <div class="hiw-phone" aria-hidden="true">
+                            <div class="hiw-phone-screen">
+                                <div class="hiw-chat-header">
+                                    <span class="hiw-chat-logo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11L12 4l8 7"/><path d="M6 10v7a1.5 1.5 0 001.5 1.5h9a1.5 1.5 0 001.5-1.5v-7"/></svg></span>
+                                    <div>
+                                        <strong>NeighbourlySpace <svg width="11" height="11" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="var(--green)"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></strong>
+                                        <span class="status">online</span>
+                                    </div>
+                                </div>
+                                <p class="msg-out">Hi, I need a plumber in Meyersdal. I have a leaking kitchen tap. Can you help?</p>
+                                <p class="msg-time">10:32 ✓✓</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="hiw-step">
+                        <p class="step-num">02</p>
+                        <div class="step-top">
+                            <span class="icon-circle text-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></span>
+                            <h3>We connect you.</h3>
+                        </div>
+                        <p class="desc">We'll recommend a trusted local professional who serves your area and meets your needs.</p>
+                        <div class="hiw-phone" aria-hidden="true">
+                            <div class="hiw-phone-screen">
+                                <div class="hiw-pro-card">
+                                    <span class="hiw-avatar">LP</span>
+                                    <div class="hiw-pro-info">
+                                        <strong>Lebo Plumbing</strong>
+                                        <span>Plumbing Specialist</span>
+                                        <span>Meyersdal, Alberton</span>
+                                        <span class="rating-line"><b>★</b> 4.9 (28 jobs)</span>
+                                    </div>
+                                </div>
+                                <p class="msg-in">Hi! I can assist with your kitchen tap. I'm available today at 14:00.</p>
+                                <p class="msg-time left">10:35</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="hiw-step">
+                        <p class="step-num">03</p>
+                        <div class="step-top">
+                            <span class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--green)"/><path d="M7 12.5l3.3 3.3 7-7.3" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <h3>Book directly.</h3>
+                        </div>
+                        <p class="desc">Connect with the professional, agree on a time, and get the job done with peace of mind.</p>
+                        <div class="hiw-phone" aria-hidden="true">
+                            <div class="hiw-phone-screen">
+                                <div class="hiw-confirm">
+                                    <span class="check-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                                    <strong>Booking confirmed</strong>
+                                    <span class="sub">Lebo Plumbing<br>Today, 14:00</span>
+                                    <span class="btn-mini">View booking details</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="cta-dark">
+                    <div class="cta-dark-left">
+                        <span class="icon-circle text-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg></span>
+                        <div>
+                            <h3>Need help today?</h3>
+                            <p>Skip the searching. Request a trusted local service on WhatsApp and we'll point you in the right direction.</p>
+                        </div>
+                    </div>
+                    <div class="cta-dark-right">
+                        <a class="btn btn-white" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                            Request Service on WhatsApp
+                        </a>
+                        <p class="cta-note-dark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg> Usually responds within business hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services summary: all 8 categories, each linking to its card on
+             services.html so visitors can jump straight to what they need -->
+        <section class="section section-light" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Our Services</p>
+                        <h2>Eight trusted categories. <br>One simple request.</h2>
+                    </div>
+                    <div class="section-head-aside">
+                        <p>Plumbing, Electrical, Garden Services, Cleaning, Handyman, Pool Services, Painting and Security — every job handled by vetted local professionals.</p>
+                        <a class="link-arrow" href="services.html">View all services</a>
+                    </div>
+                </div>
+
+                <div class="service-chips">
+                    <a class="service-chip" href="services.html#plumbing">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 002.5 2.5"/></svg></span>
+                        Plumbing
+                    </a>
+                    <a class="service-chip" href="services.html#electrical">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6l1-8z"/></svg></span>
+                        Electrical
+                    </a>
+                    <a class="service-chip" href="services.html#garden">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg></span>
+                        Garden Services
+                    </a>
+                    <a class="service-chip" href="services.html#cleaning">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></svg></span>
+                        Cleaning
+                    </a>
+                    <a class="service-chip" href="services.html#handyman">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.3 5.3L3.5 17.5a1.5 1.5 0 002.1 2.1l5.9-5.9a4 4 0 005.3-5.3l-2.5 2.5-2.1-.6-.6-2.1 2.5-2.5z"/></svg></span>
+                        Handyman
+                    </a>
+                    <a class="service-chip" href="services.html#pool">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 16c1.6 0 1.6 1.5 3.2 1.5S7.3 16 8.9 16s1.6 1.5 3.2 1.5 1.6-1.5 3.2-1.5 1.6 1.5 3.2 1.5 1.6-1.5 3-1.5"/><path d="M8 13V5.5a2 2 0 014 0M16 13V5.5a2 2 0 00-4 0"/><path d="M8 9h8"/></svg></span>
+                        Pool Services
+                    </a>
+                    <a class="service-chip" href="services.html#painting">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3.5" width="14" height="6" rx="1.5"/><path d="M17 6.5h2.5V12H11v3"/><rect x="9.5" y="15" width="3" height="6" rx="1"/></svg></span>
+                        Painting
+                    </a>
+                    <a class="service-chip" href="services.html#security">
+                        <span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        Security
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog preview: article teasers (articles publish with the app launch) -->
+        <section class="section" id="blog">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Blog and Articles</p>
+                        <h2>Stories, Tips &amp; <br>Neighbourhood Know-How</h2>
+                    </div>
+                    <p>Ideas for estate living, home upkeep, and getting the most out of your community.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-cover cover-orange"></div>
+                        <div class="blog-body">
+                            <p class="cat">Community</p>
+                            <h3>Five signs your estate is ready to go digital</h3>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-cover cover-green"></div>
+                        <div class="blog-body">
+                            <p class="cat">Home Upkeep</p>
+                            <h3>What to check before hiring a gardener</h3>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-cover cover-blue"></div>
+                        <div class="blog-body">
+                            <p class="cat">Trust &amp; Safety</p>
+                            <h3>How we verify every service provider</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: dark call-to-action band + accordion built with native
+             <details>/<summary>, so it opens and closes without JavaScript -->
+        <section class="section section-tight" id="faq">
+            <div class="container">
+                <div class="faq-band">
+                    <p class="band-tag"><span class="dot"></span>READY WHEN YOU ARE</p>
+                    <h2>Need help today? <br>We're one message away.</h2>
+                    <p>Skip the searching. Send us a message on WhatsApp and we'll connect you with a trusted local professional who can help.</p>
+
+                    <div class="band-cta">
+                        <a class="btn btn-white" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                            Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+                        <div class="band-avatars">
+                            <div class="avatar-stack" aria-hidden="true">
+                                <span class="bg-orange"></span>
+                                <span class="bg-blue"></span>
+                                <span class="avatar-count">+24k</span>
+                            </div>
+                            <p>Homeowners helped<br>across Alberton</p>
+                        </div>
+                    </div>
+
+                    <ul class="trust-row">
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>Trusted professionals</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Quick response</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Your details are safe</li>
+                    </ul>
+                </div>
+
+                <div class="faq-list-wrap">
+                    <div class="faq-list-head">
+                        <p class="eyebrow">FAQ</p>
+                        <h2>Frequently <br>asked questions.</h2>
+                    </div>
+                    <div class="faq-columns">
+                        <div>
+                            <details class="faq-item">
+                                <summary class="faq-q">How does NeighbourlySpace work?</summary>
+                                <p class="faq-a">Send us a message on WhatsApp with the service you need, and we'll connect you with a trusted local professional who serves your area.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-q">Is the app available to download?</summary>
+                                <p class="faq-a">Not yet — our app is currently in development. Until it launches, every request is handled personally through WhatsApp.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-q">What areas do you serve?</summary>
+                                <p class="faq-a">We're starting close to home across Alberton — including Meyersdal, Brackenhurst, New Redruth, Randhart and Glenvista — before expanding across Gauteng.</p>
+                            </details>
+                        </div>
+                        <div>
+                            <details class="faq-item">
+                                <summary class="faq-q">How quickly will I get a response?</summary>
+                                <p class="faq-a">We aim to respond as quickly as possible during business hours, usually within the same day.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-q">Are the professionals verified?</summary>
+                                <p class="faq-a">Yes — every professional we recommend is vetted before being added to our network of trusted local providers.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-q">How do I make a booking?</summary>
+                                <p class="faq-a">Once we connect you with a professional, you can agree on a time directly with them and confirm your booking through WhatsApp.</p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Website Footer: full sitemap + contact details on every page -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <picture>
+                        <source type="image/webp" srcset="images/logo-full-460.webp 460w, images/logo-full-920.webp 920w" sizes="5.25rem">
+                        <img src="images/logo-full.png" alt="NeighbourlySpace logo" width="81" height="52" loading="lazy">
+                    </picture>
+                    <p class="footer-statement">Connecting neighbours, homes and trusted local professionals.</p>
+                    <p class="footer-tagline">Built in Alberton.<br>Growing across Gauteng.</p>
+                    <a class="btn btn-outline" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                        Request a Service on WhatsApp <span class="arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+                <div class="footer-product">
+                    <p class="footer-head">Product</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <p class="footer-head">Services</p>
+                    <ul class="footer-links">
+                        <li><a href="services.html#plumbing">Plumbing</a></li>
+                        <li><a href="services.html#electrical">Electrical</a></li>
+                        <li><a href="services.html#garden">Garden Services</a></li>
+                        <li><a href="services.html#cleaning">Cleaning</a></li>
+                        <li><a href="services.html#handyman">Handyman</a></li>
+                        <li><a href="services.html#pool">Pool Services</a></li>
+                        <li><a href="services.html#painting">Painting</a></li>
+                        <li><a href="services.html#security">Security</a></li>
+                    </ul>
+                    <a class="footer-view-all" href="services.html">View all services <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="footer-company">
+                    <p class="footer-head">Company</p>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="enquiry.html">Become a Provider</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support">
+                    <p class="footer-head">Support</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="enquiry.html">Request a Service</a></li>
+                        <li><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%20need%20some%20help" target="_blank" rel="noopener">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeighbourlySpace.<br>All rights reserved.</p>
+                <p class="footer-loc">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A7A7A" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                    Alberton, Gauteng<br>South Africa
+                </p>
+                <p>WhatsApp:<br><a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener">+27 68 457 0771</a></p>
+                <p>Built &amp; designed by<br>Missinghalostudios</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20service" target="_blank" rel="noopener" aria-label="Chat to NeighbourlySpace on WhatsApp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5C7.3 3.5 3.5 7 3.5 11.3c0 2.1 1 4 2.5 5.4L5.4 20l3.6-1.4c.9.3 1.9.4 2.9.4 4.7 0 8.5-3.5 8.5-7.8S16.6 3.5 12 3.5z"/><path d="M8.8 10.6c.3 1.7 2.1 3.5 3.8 3.8"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
