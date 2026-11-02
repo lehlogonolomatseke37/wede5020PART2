@@ -1,0 +1,16 @@
+# robots.txt — NeighbourlySpace
+# Tells search engine crawlers which parts of the site to index.
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Screenshot evidence is coursework documentation, not site content,
+# so it is kept out of search results.
+Disallow: /screenshots/
+
+# Third-party library bundled with the site; no value in indexing it.
+Disallow: /js/vendor/
+Disallow: /css/vendor/
+
+Sitemap: https://lehlogonolomatseke37.github.io/wede5020PART2/sitemap.xml
