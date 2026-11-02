@@ -7,7 +7,29 @@
     <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | NeighbourlySpace</title>
+    <title>Contact NeighbourlySpace | Alberton, Meyersdal &amp; Surrounds</title>
+
+    <!-- SEO: description and keywords are what a search engine shows and
+         indexes; canonical names the one true URL for this page -->
+    <meta name="description" content="Contact NeighbourlySpace on WhatsApp, by phone or by email. See the interactive map of the Alberton suburbs and estates our professionals cover every week.">
+    <meta name="keywords" content="contact NeighbourlySpace, home services near me Alberton, service areas Meyersdal, Brackenhurst services, Randhart services, Glenvista services">
+    <meta name="author" content="Junior Lehlogonolo Matseke">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b4ea2">
+    <link rel="canonical" href="https://lehlogonolomatseke37.github.io/wede5020PART2/contact-us.html">
+
+    <!-- Open Graph and Twitter: the preview card when the page is shared -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeighbourlySpace">
+    <meta property="og:title" content="Contact NeighbourlySpace | Alberton, Meyersdal & Surrounds">
+    <meta property="og:description" content="Contact NeighbourlySpace on WhatsApp, by phone or by email. See the interactive map of the Alberton suburbs and estates our professionals cover every week.">
+    <meta property="og:url" content="https://lehlogonolomatseke37.github.io/wede5020PART2/contact-us.html">
+    <meta property="og:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact NeighbourlySpace | Alberton, Meyersdal & Surrounds">
+    <meta name="twitter:description" content="Contact NeighbourlySpace on WhatsApp, by phone or by email. See the interactive map of the Alberton suburbs and estates our professionals cover every week.">
+    <meta name="twitter:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -18,7 +40,36 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
 
     <!-- External stylesheet shared by all five pages -->
+    <!-- Leaflet: open-source mapping library for the interactive
+         service-area map. Served from this repository rather than a
+         CDN so the map still works offline and off-network -->
+    <link rel="stylesheet" href="css/vendor/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured data: tells search engines this is a local business,
+         which powers the map/opening-hours card in search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NeighbourlySpace",
+      "description": "Community platform connecting Alberton and Gauteng households with vetted local home-service professionals.",
+      "url": "https://lehlogonolomatseke37.github.io/wede5020PART2/",
+      "logo": "https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png",
+      "email": "neighbourlyspace@gmail.com",
+      "telephone": "+27684570771",
+      "areaServed": ["Alberton", "Meyersdal", "Brackenhurst", "New Redruth", "Randhart", "Glenvista"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alberton",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "openingHours": "Mo-Sa 07:00-18:00",
+      "priceRange": "R300 - R7500"
+    }
+    </script>
+
 </head>
 
 <body>
@@ -128,31 +179,43 @@
             </div>
         </section>
 
-        <!-- Maps: the two areas we work in most, embedded with <iframe> so the
-             page still needs no JavaScript of its own -->
+        <!-- Find us: one interactive Leaflet map with a marker for every
+             suburb we cover. The Google Maps embed below it is the fallback
+             shown when JavaScript or the map library is unavailable -->
         <section class="section section-light" id="find-us">
             <div class="container">
                 <div class="section-head">
                     <div>
                         <p class="eyebrow">Find Us</p>
-                        <h2>Two areas we work in <br>every week.</h2>
+                        <h2>Six suburbs we work in <br>every week.</h2>
                     </div>
-                    <p>NeighbourlySpace is based in Alberton and our professionals travel across the surrounding estates. Check the maps below to see whether you are inside our service area.</p>
+                    <p>NeighbourlySpace is based in Alberton and our professionals travel across the surrounding estates. Pick a suburb to move the map, or drag it to see whether you are inside our service area.</p>
                 </div>
 
-                <div class="map-grid">
-                    <article class="card map-card">
-                        <h3>Alberton (base)</h3>
-                        <p>Our home suburb, where most requests come from.</p>
-                        <iframe title="Map of Alberton, Gauteng, where NeighbourlySpace is based" src="https://www.google.com/maps?q=Alberton%2C%20Gauteng%2C%20South%20Africa&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-layout">
+                    <div class="map-shell">
+                        <!-- Leaflet draws the map into this element -->
+                        <div id="service-map" class="service-map">
+                            <noscript>
+                                <iframe title="Map of Alberton, Gauteng, where NeighbourlySpace is based" src="https://www.google.com/maps?q=Alberton%2C%20Gauteng%2C%20South%20Africa&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </noscript>
+                        </div>
+                        <p class="map-note">Scroll zoom is off until you click the map, so the page keeps scrolling normally. Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+                    </div>
+
+                    <aside class="map-aside" aria-label="Suburbs we serve">
+                        <h3>Our service areas</h3>
+                        <p>Alberton is our base. Click a suburb to centre the map on it.</p>
+                        <ul class="area-list" id="service-area-list">
+                            <li>Alberton</li>
+                            <li>Meyersdal</li>
+                            <li>Brackenhurst</li>
+                            <li>New Redruth</li>
+                            <li>Randhart</li>
+                            <li>Glenvista</li>
+                        </ul>
                         <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Alberton%2C%20Gauteng%2C%20South%20Africa" target="_blank" rel="noopener">Open Alberton in Google Maps</a>
-                    </article>
-                    <article class="card map-card">
-                        <h3>Meyersdal and surrounds</h3>
-                        <p>Estates we serve daily, including Brackenhurst, New Redruth, Randhart and Glenvista.</p>
-                        <iframe title="Map of Meyersdal, Alberton, one of the areas NeighbourlySpace serves" src="https://www.google.com/maps?q=Meyersdal%2C%20Alberton%2C%20South%20Africa&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Meyersdal%2C%20Alberton%2C%20South%20Africa" target="_blank" rel="noopener">Open Meyersdal in Google Maps</a>
-                    </article>
+                    </aside>
                 </div>
             </div>
         </section>
@@ -165,27 +228,63 @@
                     <h2>Send us a message</h2>
                     <p>Fill in your details and we will reply within 24 hours via WhatsApp, phone call or email.</p>
 
-                    <form action="#" method="post">
+                    <!-- js/forms.js validates every field, then compiles the
+                         message into an email addressed to the business and
+                         hands it to the visitor's mail application -->
+                    <form action="#" method="post" id="contact-form">
                         <div class="form-grid">
                             <div class="field">
-                                <label for="contact-name">Full Name</label>
-                                <input type="text" id="contact-name" name="contact-name" autocomplete="name" placeholder="Your full name" required>
+                                <label for="contact-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="contact-name" name="contact-name" autocomplete="name"
+                                    placeholder="Your full name" minlength="2" maxlength="60"
+                                    aria-describedby="contact-name-error" required>
+                                <p class="field-error" id="contact-name-error" role="alert"></p>
                             </div>
                             <div class="field">
-                                <label for="contact-email">Email</label>
-                                <input type="email" id="contact-email" name="contact-email" autocomplete="email" placeholder="you@example.com" required>
+                                <label for="contact-email">Email <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="contact-email" name="contact-email" autocomplete="email"
+                                    placeholder="you@example.com" aria-describedby="contact-email-error" required>
+                                <p class="field-error" id="contact-email-error" role="alert"></p>
+                            </div>
+                            <div class="field">
+                                <label for="contact-phone">Phone number <span class="optional">(optional)</span></label>
+                                <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel"
+                                    placeholder="e.g. 082 123 4567"
+                                    pattern="(\+27|0)[\s-]?\d{2}[\s-]?\d{3}[\s-]?\d{4}"
+                                    aria-describedby="contact-phone-error">
+                                <p class="field-error" id="contact-phone-error" role="alert"></p>
+                            </div>
+                            <div class="field">
+                                <label for="contact-type">Type of message <span class="req" aria-hidden="true">*</span></label>
+                                <select id="contact-type" name="contact-type" aria-describedby="contact-type-error" required>
+                                    <option value="">Select one option</option>
+                                    <option value="general">General question</option>
+                                    <option value="quote">Request a quote</option>
+                                    <option value="provider">Join as a service provider</option>
+                                    <option value="estate">Estate or complex partnership</option>
+                                    <option value="complaint">Complaint or feedback</option>
+                                </select>
+                                <p class="field-error" id="contact-type-error" role="alert"></p>
                             </div>
                             <div class="field full">
-                                <label for="contact-message">Message</label>
-                                <textarea id="contact-message" name="contact-message" placeholder="Tell us how we can help" required></textarea>
+                                <label for="contact-message">Message <span class="req" aria-hidden="true">*</span></label>
+                                <textarea id="contact-message" name="contact-message" minlength="20" maxlength="600"
+                                    placeholder="Tell us how we can help"
+                                    aria-describedby="contact-message-counter contact-message-error" required></textarea>
+                                <p class="field-hint char-counter" id="contact-message-counter">0 / 600</p>
+                                <p class="field-error" id="contact-message-error" role="alert"></p>
                             </div>
                         </div>
 
                         <div class="form-actions">
                             <small>Fields marked <span aria-hidden="true">*</span> are required.</small>
-                            <button type="submit" class="btn btn-primary">Send Message <span class="arrow" aria-hidden="true">&rarr;</span></button>
+                            <button type="submit" class="btn btn-primary">Prepare My Email <span class="arrow" aria-hidden="true">&rarr;</span></button>
                         </div>
                     </form>
+
+                    <!-- The compiled email is written in here, with a button
+                         that opens it in the visitor's mail application -->
+                    <div class="response-panel" id="contact-response" hidden></div>
                 </div>
 
                 <aside class="card-dark next-steps" aria-label="Other ways to reach us">
@@ -297,6 +396,15 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Scripts are deferred: they download in parallel with the
+         page and run in order once the HTML is parsed, so nothing
+         blocks the first paint -->
+    <script src="js/app.js" defer></script>
+    <script src="js/vendor/leaflet.js" defer></script>
+    <script src="js/maps.js" defer></script>
+    <script src="js/forms.js" defer></script>
 
 </body>
 

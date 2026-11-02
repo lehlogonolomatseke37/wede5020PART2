@@ -7,7 +7,29 @@
     <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NeighbourlySpace | Trusted Services for Your Community</title>
+    <title>NeighbourlySpace | Trusted Home Services in Alberton &amp; Gauteng</title>
+
+    <!-- SEO: description and keywords are what a search engine shows and
+         indexes; canonical names the one true URL for this page -->
+    <meta name="description" content="NeighbourlySpace connects Alberton and Gauteng households with vetted local plumbers, electricians, gardeners, cleaners and security technicians. Request a service on WhatsApp today.">
+    <meta name="keywords" content="home services Alberton, plumbers Alberton, electricians Gauteng, garden services Alberton, cleaning services Alberton, handyman Alberton, estate services Gauteng, NeighbourlySpace">
+    <meta name="author" content="Junior Lehlogonolo Matseke">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b4ea2">
+    <link rel="canonical" href="https://lehlogonolomatseke37.github.io/wede5020PART2/index.html">
+
+    <!-- Open Graph and Twitter: the preview card when the page is shared -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeighbourlySpace">
+    <meta property="og:title" content="NeighbourlySpace | Trusted Home Services in Alberton & Gauteng">
+    <meta property="og:description" content="NeighbourlySpace connects Alberton and Gauteng households with vetted local plumbers, electricians, gardeners, cleaners and security technicians. Request a service on WhatsApp today.">
+    <meta property="og:url" content="https://lehlogonolomatseke37.github.io/wede5020PART2/index.html">
+    <meta property="og:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NeighbourlySpace | Trusted Home Services in Alberton & Gauteng">
+    <meta name="twitter:description" content="NeighbourlySpace connects Alberton and Gauteng households with vetted local plumbers, electricians, gardeners, cleaners and security technicians. Request a service on WhatsApp today.">
+    <meta name="twitter:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -19,6 +41,31 @@
 
     <!-- External stylesheet shared by all five pages -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured data: tells search engines this is a local business,
+         which powers the map/opening-hours card in search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NeighbourlySpace",
+      "description": "Community platform connecting Alberton and Gauteng households with vetted local home-service professionals.",
+      "url": "https://lehlogonolomatseke37.github.io/wede5020PART2/",
+      "logo": "https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png",
+      "email": "neighbourlyspace@gmail.com",
+      "telephone": "+27684570771",
+      "areaServed": ["Alberton", "Meyersdal", "Brackenhurst", "New Redruth", "Randhart", "Glenvista"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alberton",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "openingHours": "Mo-Sa 07:00-18:00",
+      "priceRange": "R300 - R7500"
+    }
+    </script>
+
 </head>
 
 <body>
@@ -143,6 +190,31 @@
 
         <!-- Community: why NeighbourlySpace, the areas we serve and a short
              about summary linking through to about.html -->
+        <!-- Headline numbers. The final figure is in the HTML so it is
+             correct without JavaScript; the script counts up to it -->
+        <section class="section section-tight stats-section" id="stats">
+            <div class="container">
+                <ul class="stat-grid">
+                    <li class="stat">
+                        <span class="stat-number" data-count-to="8">8</span>
+                        <span class="stat-label">Service categories</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count-to="1163" data-count-suffix="+">1163+</span>
+                        <span class="stat-label">Jobs requested this year</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count-to="6">6</span>
+                        <span class="stat-label">Suburbs covered weekly</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count-to="3" data-count-suffix="h">3h</span>
+                        <span class="stat-label">Average emergency response</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <section class="section" id="impacts">
             <div class="container">
                 <div class="section-head">
@@ -392,6 +464,24 @@
                     <p>Ideas for estate living, home upkeep, and getting the most out of your community.</p>
                 </div>
 
+                <!-- Category tabs follow the ARIA tab pattern: arrow keys
+                     move between them, and each one re-renders the feed -->
+                <div class="tabs" role="tablist" aria-label="Filter articles by category">
+                    <button type="button" class="tab is-active" role="tab" data-category="all" aria-selected="true" tabindex="0">All</button>
+                    <button type="button" class="tab" role="tab" data-category="Community" aria-selected="false" tabindex="-1">Community</button>
+                    <button type="button" class="tab" role="tab" data-category="Home Upkeep" aria-selected="false" tabindex="-1">Home Upkeep</button>
+                    <button type="button" class="tab" role="tab" data-category="Trust &amp; Safety" aria-selected="false" tabindex="-1">Trust &amp; Safety</button>
+                </div>
+
+                <!-- JavaScript loads the articles into this grid -->
+                <div class="blog-grid" id="blog-feed"></div>
+
+                <p class="feed-footer">
+                    <button type="button" class="btn btn-ghost" id="blog-more">Load more articles</button>
+                    <span class="result-count" id="blog-status" role="status" aria-live="polite"></span>
+                </p>
+
+                <noscript>
                 <div class="blog-grid">
                     <article class="blog-card">
                         <div class="blog-cover cover-orange"></div>
@@ -415,6 +505,7 @@
                         </div>
                     </article>
                 </div>
+                </noscript>
             </div>
         </section>
 
@@ -568,6 +659,13 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Scripts are deferred: they download in parallel with the
+         page and run in order once the HTML is parsed, so nothing
+         blocks the first paint -->
+    <script src="js/app.js" defer></script>
+    <script src="js/home.js" defer></script>
 
 </body>
 

@@ -7,7 +7,29 @@
     <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Request a Service | NeighbourlySpace</title>
+    <title>Request a Service | Get an Indicative Quote | NeighbourlySpace</title>
+
+    <!-- SEO: description and keywords are what a search engine shows and
+         indexes; canonical names the one true URL for this page -->
+    <meta name="description" content="Send a service request to NeighbourlySpace and get an indicative cost range and call-back time straight away. Vetted professionals across Alberton and the East Rand.">
+    <meta name="keywords" content="request a service Alberton, home service quote Gauteng, book a plumber Alberton, book an electrician Alberton, service enquiry form">
+    <meta name="author" content="Junior Lehlogonolo Matseke">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b4ea2">
+    <link rel="canonical" href="https://lehlogonolomatseke37.github.io/wede5020PART2/enquiry.html">
+
+    <!-- Open Graph and Twitter: the preview card when the page is shared -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeighbourlySpace">
+    <meta property="og:title" content="Request a Service | Get an Indicative Quote | NeighbourlySpace">
+    <meta property="og:description" content="Send a service request to NeighbourlySpace and get an indicative cost range and call-back time straight away. Vetted professionals across Alberton and the East Rand.">
+    <meta property="og:url" content="https://lehlogonolomatseke37.github.io/wede5020PART2/enquiry.html">
+    <meta property="og:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Request a Service | Get an Indicative Quote | NeighbourlySpace">
+    <meta name="twitter:description" content="Send a service request to NeighbourlySpace and get an indicative cost range and call-back time straight away. Vetted professionals across Alberton and the East Rand.">
+    <meta name="twitter:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/logo-full.png">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -84,33 +106,45 @@
         <section class="section">
             <div class="container enquiry-grid">
 
-                <!-- action="#" because there is no live backend yet; every field
-                     keeps its <label for> + id pair, and required/type attributes
-                     give built-in validation. Styling for :focus, :user-invalid
-                     and :user-valid lives in css/style.css -->
+                <!-- The form keeps its HTML5 validation attributes (required,
+                     type, pattern, maxlength) as a baseline. js/forms.js adds
+                     field-level messages, then processes the request and
+                     answers with an indicative cost and call-back time -->
                 <div class="card form-card">
                     <h2>Tell us what you need</h2>
                     <p>The more detail you share, the faster we can match you with the right professional.</p>
 
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="enquiry-form">
                         <div class="form-grid">
                             <div class="field">
-                                <label for="fullname">Full Name</label>
-                                <input type="text" id="fullname" name="fullname" autocomplete="name" placeholder="Your full name" required>
+                                <label for="fullname">Full name <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="fullname" name="fullname" autocomplete="name"
+                                    placeholder="Your full name" minlength="2" maxlength="60"
+                                    aria-describedby="fullname-error" required>
+                                <p class="field-error" id="fullname-error" role="alert"></p>
                             </div>
                             <div class="field">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" autocomplete="email"
+                                    placeholder="you@example.com" aria-describedby="email-error" required>
+                                <p class="field-error" id="email-error" role="alert"></p>
                             </div>
                             <div class="field">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 082 123 4567" required>
+                                <label for="phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+                                <!-- pattern accepts 0XX XXX XXXX and +27 XX XXX XXXX,
+                                     with or without spaces -->
+                                <input type="tel" id="phone" name="phone" autocomplete="tel"
+                                    placeholder="e.g. 082 123 4567"
+                                    pattern="(\+27|0)[\s-]?\d{2}[\s-]?\d{3}[\s-]?\d{4}"
+                                    aria-describedby="phone-hint phone-error" required>
+                                <p class="field-hint" id="phone-hint">South African numbers only.</p>
+                                <p class="field-error" id="phone-error" role="alert"></p>
                             </div>
                             <div class="field">
                                 <!-- Options mirror the 8 services on services.html, plus
                                      business / general / support enquiries -->
-                                <label for="service">How can we help you?</label>
-                                <select id="service" name="service" required>
+                                <label for="service">How can we help you? <span class="req" aria-hidden="true">*</span></label>
+                                <select id="service" name="service" aria-describedby="service-error" required>
                                     <option value="">Select one option</option>
                                     <option value="plumbing">Plumbing Services</option>
                                     <option value="electrical">Electrical Services</option>
@@ -124,18 +158,43 @@
                                     <option value="general">General Enquiry</option>
                                     <option value="support">Technical Support</option>
                                 </select>
+                                <p class="field-error" id="service-error" role="alert"></p>
+                            </div>
+                            <div class="field">
+                                <label for="urgency">How soon do you need it? <span class="req" aria-hidden="true">*</span></label>
+                                <select id="urgency" name="urgency" aria-describedby="urgency-error" required>
+                                    <option value="">Select one option</option>
+                                    <option value="emergency">Emergency &mdash; today</option>
+                                    <option value="urgent">Urgent &mdash; within 48 hours</option>
+                                    <option value="standard" selected>Standard &mdash; this week</option>
+                                </select>
+                                <p class="field-error" id="urgency-error" role="alert"></p>
+                            </div>
+                            <div class="field">
+                                <label for="preferred-date">Preferred date <span class="req" aria-hidden="true">*</span></label>
+                                <input type="date" id="preferred-date" name="preferred-date"
+                                    aria-describedby="preferred-date-hint preferred-date-error" required>
+                                <p class="field-hint" id="preferred-date-hint">Today or any date within the next 90 days.</p>
+                                <p class="field-error" id="preferred-date-error" role="alert"></p>
                             </div>
                             <div class="field full">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell us about the job, your suburb or estate, and when you need help"></textarea>
+                                <label for="message">Describe the job <span class="req" aria-hidden="true">*</span></label>
+                                <textarea id="message" name="message" maxlength="600" minlength="20"
+                                    placeholder="Tell us about the job, your suburb or estate, and when you need help"
+                                    aria-describedby="message-counter message-error" required></textarea>
+                                <p class="field-hint char-counter" id="message-counter">0 / 600</p>
+                                <p class="field-error" id="message-error" role="alert"></p>
                             </div>
                         </div>
 
                         <div class="form-actions">
                             <small>Fields marked <span aria-hidden="true">*</span> are required.</small>
-                            <button type="submit" class="btn btn-primary">Send Enquiry <span class="arrow" aria-hidden="true">→</span></button>
+                            <button type="submit" class="btn btn-primary">Send Enquiry <span class="arrow" aria-hidden="true">&rarr;</span></button>
                         </div>
                     </form>
+
+                    <!-- JavaScript writes the processed response in here -->
+                    <div class="response-panel" id="enquiry-response" hidden></div>
                 </div>
 
                 <!-- Sidebar: sets expectations and offers WhatsApp as a faster option -->
@@ -240,6 +299,13 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Scripts are deferred: they download in parallel with the
+         page and run in order once the HTML is parsed, so nothing
+         blocks the first paint -->
+    <script src="js/app.js" defer></script>
+    <script src="js/forms.js" defer></script>
 
 </body>
 

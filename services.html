@@ -7,7 +7,29 @@
     <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Services | NeighbourlySpace</title>
+    <title>Our Services | Plumbing, Electrical, Garden, Cleaning &amp; Security</title>
+
+    <!-- SEO: description and keywords are what a search engine shows and
+         indexes; canonical names the one true URL for this page -->
+    <meta name="description" content="Browse eight categories of vetted home services in Alberton and surrounds: plumbing, electrical, garden, cleaning, handyman, pool, painting and security. Search, filter and request in seconds.">
+    <meta name="keywords" content="plumbing Alberton, electrical repairs Alberton, garden services Meyersdal, cleaning services Brackenhurst, pool maintenance Alberton, painting services Gauteng, gate motor repairs, CCTV installation Alberton">
+    <meta name="author" content="Junior Lehlogonolo Matseke">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b4ea2">
+    <link rel="canonical" href="https://lehlogonolomatseke37.github.io/wede5020PART2/services.html">
+
+    <!-- Open Graph and Twitter: the preview card when the page is shared -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeighbourlySpace">
+    <meta property="og:title" content="Our Services | Plumbing, Electrical, Garden, Cleaning & Security">
+    <meta property="og:description" content="Browse eight categories of vetted home services in Alberton and surrounds: plumbing, electrical, garden, cleaning, handyman, pool, painting and security. Search, filter and request in seconds.">
+    <meta property="og:url" content="https://lehlogonolomatseke37.github.io/wede5020PART2/services.html">
+    <meta property="og:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/work-gate-motor-install.jpg">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Services | Plumbing, Electrical, Garden, Cleaning & Security">
+    <meta name="twitter:description" content="Browse eight categories of vetted home services in Alberton and surrounds: plumbing, electrical, garden, cleaning, handyman, pool, painting and security. Search, filter and request in seconds.">
+    <meta name="twitter:image" content="https://lehlogonolomatseke37.github.io/wede5020PART2/images/work-gate-motor-install.jpg">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -91,9 +113,48 @@
                         <p class="eyebrow">8 Categories</p>
                         <h2>Choose the help <br>you need.</h2>
                     </div>
-                    <p>Tap a category to request it on WhatsApp with a pre-filled message. Every request is handled personally while our app is being built.</p>
+                    <p>Search or filter the eight categories, open a category for what it covers and what it costs, then request it on WhatsApp or send a full enquiry. Every request is handled personally while our app is being built.</p>
                 </div>
 
+                <!-- Search, filter and sort. The controls are written in
+                     HTML so they are visible before JavaScript runs; the
+                     script then takes over rendering the grid -->
+                <div class="service-controls">
+                    <div class="field search-field">
+                        <label for="service-search">Search services</label>
+                        <input type="search" id="service-search" name="service-search"
+                            placeholder="Try &ldquo;gate motor&rdquo;, &ldquo;drain&rdquo; or &ldquo;lawn&rdquo;" autocomplete="off">
+                    </div>
+
+                    <div class="field sort-field">
+                        <label for="service-sort">Sort by</label>
+                        <select id="service-sort" name="service-sort">
+                            <option value="popular">Most requested</option>
+                            <option value="name">Name (A&ndash;Z)</option>
+                            <option value="response">Fastest response</option>
+                            <option value="price">Lowest call-out</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-row">
+                    <p class="filter-label" id="filter-label">Filter:</p>
+                    <div class="filter-chips" role="group" aria-labelledby="filter-label">
+                        <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All categories</button>
+                        <button type="button" class="chip" data-filter="home" aria-pressed="false">Inside the home</button>
+                        <button type="button" class="chip" data-filter="outdoor" aria-pressed="false">Outdoors</button>
+                        <button type="button" class="chip" data-filter="security" aria-pressed="false">Security</button>
+                    </div>
+                    <p class="result-count" id="service-result-count" role="status" aria-live="polite">Showing all 8 categories</p>
+                </div>
+
+                <!-- JavaScript renders the cards in here -->
+                <div class="services-grid" id="services-grid"></div>
+
+                <p class="empty-state" id="service-empty" hidden>No category matches that search. Try a different word, or <a href="enquiry.html">send us the job description</a> and we will find the right professional.</p>
+
+                <!-- Without JavaScript the full list is still served -->
+                <noscript>
                 <div class="services-grid">
                     <article class="card card-hover service-card" id="plumbing">
                         <span class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 002.5 2.5"/></svg></span>
@@ -144,6 +205,7 @@
                         <a class="link-arrow" href="https://wa.me/27684570771?text=Hi%20NeighbourlySpace%2C%20I%27d%20like%20to%20request%20a%20security%20service" target="_blank" rel="noopener">Request <span class="visually-hidden">Security </span>on WhatsApp</a>
                     </article>
                 </div>
+                </noscript>
 
             </div>
         </section>
@@ -317,6 +379,24 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Shared dialog, filled by JavaScript when a service card is opened.
+         It stays empty and hidden until then -->
+    <div class="modal" id="site-modal" role="dialog" aria-modal="true" aria-labelledby="site-modal-title" hidden>
+        <div class="modal-panel">
+            <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+            <h2 class="modal-title" id="site-modal-title">Service details</h2>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts are deferred: they download in parallel with the
+         page and run in order once the HTML is parsed, so nothing
+         blocks the first paint -->
+    <script src="js/app.js" defer></script>
+    <script src="js/services.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 
 </body>
 
